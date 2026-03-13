@@ -2,9 +2,9 @@ name: Fundamental Radar Scan
 
 on:
   schedule:
-    # Runs at 08:00 UTC every Monday (Adjust as needed)
-    - cron: '0 8 * * 1'
-  workflow_dispatch: # Allows you to run it manually from the Actions tab
+    # This runs every day at 08:00 UTC (approx 7:00 PM Sydney / 3:00 AM New York)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
 
 jobs:
   build-and-run:
