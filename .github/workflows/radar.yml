@@ -2,9 +2,9 @@ name: Fundamental Radar Scan
 
 on:
   schedule:
-    # This runs every day at 08:00 UTC (approx 7:00 PM Sydney / 3:00 AM New York)
+    # Runs every day at 08:00 UTC
     - cron: '0 8 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Allows you to run it manually for testing
 
 jobs:
   build-and-run:
@@ -33,7 +33,7 @@ jobs:
           SMTP_HOST: smtp.gmail.com
           SMTP_PORT: 587
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }} # This must be an App Password
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_FROM: ${{ secrets.SMTP_USERNAME }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: daily_monitory.py
+        run: python daily_monitory.py
