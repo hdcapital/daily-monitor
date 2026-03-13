@@ -36,4 +36,4 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }} # This must be an App Password
           EMAIL_FROM: ${{ secrets.SMTP_USERNAME }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: python your_script_name.py
+        run: daily_monitory.py
